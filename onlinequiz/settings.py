@@ -16,7 +16,16 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/image', 'static/profile_pic')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+
+# MEDIA_URL is the base URL for media files
+MEDIA_URL = '/media/'
+
+# MEDIA_ROOT is the directory where media files are stored
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,7 +34,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = '@k0#p3kidu)yaaa3u1hplxz)f@^6xiy384*(+n@@s5x#1bx@m5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
 
@@ -138,7 +147,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
+
 LOGIN_REDIRECT_URL = '/afterlogin'
 
 # for contact us give your gmail id and password
